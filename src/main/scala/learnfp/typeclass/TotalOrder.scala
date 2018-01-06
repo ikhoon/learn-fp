@@ -6,15 +6,15 @@ trait TotalOrder[A] {
 
 object TotalOrderInstances {
   implicit val intInstance:TotalOrder[Int] = new TotalOrder[Int] {
-    override def less(lhs: Int, rhs: Int): Boolean = ???
+    override def less(lhs: Int, rhs: Int): Boolean = lhs < rhs
   }
 
   implicit val stringInstance:TotalOrder[String] = new TotalOrder[String] {
-    override def less(lhs: String, rhs: String): Boolean = ???
+    override def less(lhs: String, rhs: String): Boolean = lhs < rhs
   }
 
   implicit def listInstance[T](implicit suborder:TotalOrder[T]):TotalOrder[List[T]] = new TotalOrder[List[T]] {
-    override def less(lhs: List[T], rhs: List[T]): Boolean = ???
+    override def less(lhs: List[T], rhs: List[T]): Boolean = lhs.corresponds(rhs)(suborder.less)
   }
 }
 

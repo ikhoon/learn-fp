@@ -20,6 +20,9 @@ object MaybeInstance {
   import Maybe._
 
   implicit val maybeInstance:Functor[Maybe] = new Functor[Maybe] {
-    override def fmap[A, B](a: Maybe[A])(fx: A => B): Maybe[B] = ???
+    override def fmap[A, B](a: Maybe[A])(fx: A => B): Maybe[B] = a match {
+      case Just(value) => Just(fx(value))
+      case Nothing() => Nothing()
+    }
   }
 }
