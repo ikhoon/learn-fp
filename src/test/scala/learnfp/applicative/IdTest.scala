@@ -12,6 +12,7 @@ class IdTest extends WordSpecLike with Matchers {
   "id applicative" should {
     "work" in {
       def foo(x:Int)(y:Int)(z:Int) = x + y + z
+      val x: Id[Int => Int => Int] = foo _ `<$>` Id(10)
       foo _ `<$>` Id(10) <*> Id(20) <*> Id(30) shouldBe Id(10 + 20 + 30)
     }
   }
