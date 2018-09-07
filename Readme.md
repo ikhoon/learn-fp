@@ -1,7 +1,7 @@
-# Learn FP || [![Build Status](https://travis-ci.org/dehun/learn-fp.svg?branch=master)](https://travis-ci.org/dehun/learn-fp) [![Build Status](https://travis-ci.org/dehun/learn-fp.svg?branch=answers)](https://travis-ci.org/dehun/learn-fp) #
+# Learn Functional Programming course/tutorial on Scala  [![Build Status](https://travis-ci.org/dehun/learn-fp.svg?branch=master)](https://travis-ci.org/dehun/learn-fp) [![Build Status](https://travis-ci.org/dehun/learn-fp.svg?branch=answers)](https://travis-ci.org/dehun/learn-fp) #
 ## Intro ##
-This course was created with purpose to better understand functional programming idioms using Scala language.
-It covers type classes, monoids, functors, applicatives, monads, free monad.   
+This course/tutorial was created with purpose to better understand functional programming idioms using Scala language.
+It covers type classes, monoids, functors, applicatives, monads, traversable/foldable, monad transformers, free monad.   
 Material is structured as set of stub/unimplemented functions/classes and tests for them.
 Your objective is to make all unit tests green. It is learn-by-doing course.
 
@@ -41,7 +41,7 @@ Implementing something = making all tests green for that thing.
 - Observe general monoid pattern in `learnfp/monoid/Monoid.scala`
 - Implement `learn-fp/src/main/scala/learnfp/monoid/ListMonoid.scala`
 - Implement `learn-fp/src/main/scala/learnfp/monoid/SimpleMonoid.scala`
-- Implement `learnfp/monoid/PairMonoid.scala`
+- Implement `learnfp/monoid/PairAdditiveMonoid.scala`
 - Extra material:
   - Bartosz Milewski: Category Theory 3.1: Examples of categories, orders, monoids
   
@@ -72,6 +72,10 @@ Implementing something = making all tests green for that thing.
 - Extra material
   - Brian Beckman: Don't fear the Monad
   - http://eed3si9n.com/learning-scalaz/Monad+transformers.html
+  
+### Foldable ###
+
+- Implement foldable in `learnfp/foldable/Foldable.scala`
 
 ### Applicatives ###
 
@@ -82,10 +86,13 @@ Implementing something = making all tests green for that thing.
 - Implement `learnfp/applicative/Disjunction.scala`
 - Implement `learnfp/applicative/Writer.scala`
 - Implement `learnfp/applicative/State.scala`
-- Implement `learnfp/traversable/Traversable.scala`
 - Extra material 
   - https://en.wikibooks.org/wiki/Haskell/Applicative_functors
   - http://eed3si9n.com/learning-scalaz/Applicative.html
+  
+### Traversable ###
+
+- Implement `learnfp/traversable/Traversable.scala`
 
 ### Monad Transformers ###
 
@@ -104,6 +111,18 @@ Implementing something = making all tests green for that thing.
   - http://blog.krobinson.me/posts/monads-part-2-the-free-monad/
   - https://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html
   
+### Contravariant functor ###
+
+- Observe general contravariant functor pattern in `learnfp/contravariant/ContravariantFunctor.scala`
+- Implement `learnfp/contravariant/Show.scala`
+- Implement `learnfp/contravariant/Predicate.scala`
+
+### CoMonads ###
+
+- Observe general comonad pattern in `learnfp/comonad/CoMonad.scala`
+- Implement `learnfp/comonad/Id.scala`
+- Implement `learnfp/comonad/Env.scala`
+  
 ### Bonus ###
 
 - Implement Reader functor, monad, applicative and write unit tests for that
@@ -114,8 +133,6 @@ Implementing something = making all tests green for that thing.
 # What was left out #
 
 - Reader/ReaderT
-- Cofunctors
-- Comonads
 - Eff
 
 # Bugs/Issues #
